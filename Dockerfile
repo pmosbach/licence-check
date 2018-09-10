@@ -9,4 +9,7 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E
     sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe && \
     sudo echo "alias nuget=\"mono /usr/local/bin/nuget.exe\"" >> ~/.bash_aliases
 
-# Set the environment variable?
+# Set the environment variable
+ENV NUGET_BINARY "mono /usr/local/bin/nuget.exe"
+
+ENTRYPOINT [ "/bin/bash" ]
